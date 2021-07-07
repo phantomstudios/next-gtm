@@ -37,7 +37,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { TrackingHeadScript, TrackingBodyScript } from "@phntms/next-gtm";
+import { TrackingHeadScript } from "@phntms/next-gtm";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
