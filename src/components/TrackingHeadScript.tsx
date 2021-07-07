@@ -1,8 +1,7 @@
 import React from "react";
 
+import { EmbedTrackingProps } from "@phntms/react-gtm";
 import Script from "next/script";
-
-import { EmbedTrackingProps } from "../types";
 
 const TrackingHeadScript = ({ id }: EmbedTrackingProps) => (
   <>
