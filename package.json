@@ -1,6 +1,6 @@
 {
   "name": "@phntms/next-gtm",
-  "description": "Description, same as overview one-liner from README.md.",
+  "description": "A lightweight Next library to implement custom Google Tag Manager events.",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -13,10 +13,15 @@
     "url": "https://github.com/phantomstudios/next-gtm/issues"
   },
   "keywords": [
+    "analytics"
+    "googletagmanager"
+    "gtm",
+    "lightweight",
+    "next",
+    "nextjs"
     "react",
-    "hooks",
-    "hook",
-    "react-hook"
+    "tagmanager",
+    "typescript",
   ],
   "scripts": {
     "build": "tsc",
@@ -34,7 +39,7 @@
     "fix:format": "prettier \"**/*.{md,html,yaml,yml}\" --write",
     "depcheck": "npx npm-check --update"
   },
-  "author": "John Chipps-Harding (john.chipps-harding@phntms.com)",
+  "author": "Paulo Ferreira Jorge (paulo.jorge@phntms.com)",
   "license": "MIT",
   "peerDependencies": {
     "next": ">=11.0.1",
@@ -43,6 +48,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@phntms/react-gtm": "^0.0.5",
     "@testing-library/react": "^11.2.5",
     "@testing-library/react-hooks": "^5.0.3",
     "@types/jest": "^26.0.20",

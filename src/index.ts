@@ -1,7 +1,7 @@
 export { default as TrackingHeadScript } from "./components/TrackingHeadScript";
-export { default as trackEvent } from "./utils/trackEvent";
 export {
+  trackEvent,
   EmbedTrackingProps,
   EventTrackingProps,
   EventDataProps,
-} from "./types";
+} from "@phntms/react-gtm";

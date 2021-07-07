@@ -8,14 +8,14 @@ A lightweight Next library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Based on [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm) with native support for [Next.JS 11](https://nextjs.org/blog/next-11), utilizing the new Script Component to **automatically prioritize loading of third-party scripts to improve performance**. Designed to use and extend [GTM](https://developers.google.com/tag-manager/quickstart) snippets.
+Extends [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm) with native support for [Next.JS 11](https://nextjs.org/blog/next-11), utilizing the new Script Component to **automatically prioritize loading of third-party scripts to improve performance**.
 
 ## Installation
 
 Install this package with `npm`.
 
 ```bash
-npm i @phntms/NEXT-gtm
+npm i @phntms/next-gtm
 ```
 
 ## Usage
@@ -31,31 +31,22 @@ To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 Example usage:
 
 ```JSX
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-} from "next/document";
+import type { AppProps } from "next/app";
+import { Head } from "next/document";
 import { TrackingHeadScript } from "@phntms/next-gtm";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
-export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html>
-        <Head>
-          <TrackingHeadScript id={GA_TRACKING_ID} />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+const App = ({ Component }: AppProps) => (
+  <>
+    <Head>
+      <TrackingHeadScript id={GA_TRACKING_ID} />
+    </Head>
+    <Component />
+  </>
+);
+
+export default App;
 ```
 
 **Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be placed after.
