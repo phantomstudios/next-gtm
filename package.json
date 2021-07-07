@@ -1,7 +1,7 @@
 {
   "name": "@phntms/next-gtm",
   "description": "A lightweight Next library to implement custom Google Tag Manager events.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/next-gtm#readme",
@@ -42,6 +42,7 @@
   "author": "Paulo Ferreira Jorge (paulo.jorge@phntms.com)",
   "license": "MIT",
   "peerDependencies": {
+    "@phntms/react-gtm": "^0.0.5",
     "next": ">=11.0.1",
     "react": ">=17.0.2"
   },
