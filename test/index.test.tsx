@@ -1,14 +1,12 @@
-import useLibrary from "../src";
-import { renderHook } from "@testing-library/react-hooks";
+import React from "react";
 
-describe("performs requests", () => {
-  it("should work with 1 argument", async () => {
-    const { result } = renderHook(() => useLibrary({argument1:10}));
-    expect(result.current.something).toEqual(10);
-  });
+import TestRenderer from "react-test-renderer";
 
-  it("should work with 2 arguments", async () => {
-    const { result } = renderHook(() => useLibrary({argument1:10, argument2: 6}));
-    expect(result.current.something).toEqual(16);
+import { TrackingHeadScript } from "../src";
+
+describe("<TrackingHeadScript />", () => {
+  it("doesn't render component if no ID", async () => {
+    const renderer = TestRenderer.create(<TrackingHeadScript />);
+    expect(renderer.toJSON()).toEqual(null);
   });
 });
