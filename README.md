@@ -100,5 +100,5 @@ Please read `CONTRIBUTING` for details on our `CODE_OF_CONDUCT`, and the process
 [npm-url]: https://npmjs.org/package/@phntms/next-gtm
 [npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/next-gtm.svg
 [npm-downloads-url]: https://npmcharts.com/compare/@phntms/next-gtm?minimal=true
-[ci-image]: https://github.com/phantomstudios/gtm/workflows/Test/badge.svg
-[ci-url]: https://github.com/phantomstudios/gtm/actions
+[ci-image]: https://github.com/phantomstudios/next-gtm/workflows/Test/badge.svg
+[ci-url]: https://github.com/phantomstudios/next-gtm/actions
