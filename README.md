@@ -28,20 +28,19 @@ npm i @phntms/next-gtm
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
+This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **don't** have to place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
+
 Example usage:
 
 ```JSX
 import type { AppProps } from "next/app";
-import { Head } from "next/document";
 import { TrackingHeadScript } from "@phntms/next-gtm";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
 const App = ({ Component }: AppProps) => (
   <>
-    <Head>
-      <TrackingHeadScript id={GA_TRACKING_ID} />
-    </Head>
+    <TrackingHeadScript id={GA_TRACKING_ID} />
     <Component />
   </>
 );
@@ -49,46 +48,11 @@ const App = ({ Component }: AppProps) => (
 export default App;
 ```
 
-**Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be placed after.
+**Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be loaded after.
 
-### trackEvent()
+### Using trackEvent()
 
-| Parameter | Type                 | Default   | Required | Notes                                           |
-| --------- | -------------------- | --------- | -------- | ----------------------------------------------- |
-| props     | `EventTrackingProps` | undefined | No       | Custom tracking event to push to GTM container. |
-
-Example of a basic tracking event:
-
-```javascript
-import { trackEvent } from "@phntms/next-gtm";
-
-trackEvent({
-  event: "customEvent",
-  data: {
-    name: "CTA - To External",
-    category: "CTA",
-    action: "To: https://phantom.land/",
-    label: "Click",
-  },
-});
-```
-
-### EventDataProps
-
-| Parameter | Type             | Default       | Required | Notes                                                                                                                                             |
-| --------- | ---------------- | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| event     | `string`         | "customEvent" | No       | Custom GTM event name, defaults to `customEvent`.                                                                                                 |
-| data      | `EventDataProps` | undefined     | No       | Supports any value(s) in the format `[key: string]: any`. Example of recommended properties to include; `name`, `category`, `action` and `label`. |
-
-### window.dataLayer
-
-This library extends `window` and exposes the `window.dataLayer` GTM container object.
-
-## Further Resources
-
-Useful resource for implementing custom GTM events:
-
-- [Omnibug](https://chrome.google.com/webstore/detail/omnibug/bknpehncffejahipecakbfkomebjmokl?hl=en) - Chrome browser extension to decode and display outgoing GTM events from within Inspect Element.
+For how to use `trackEvent()`, learn more about `EventDataProps` and how this library extends `window.dataLayer`, please reference [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm).
 
 ## 🍰 Contributing
 
