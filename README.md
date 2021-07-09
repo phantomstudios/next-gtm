@@ -28,7 +28,7 @@ npm i @phntms/next-gtm
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
-**Note**: This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **don't** have to place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
+This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **don't** have to place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
 
 Example usage:
 
