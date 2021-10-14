@@ -22,10 +22,10 @@ npm i @phntms/next-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property    | Type      | Default   | Required | Notes                                                                                                     |
-| ----------- | --------- | --------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| **id**      | `string`  | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`.                           |
-| **disable** | `boolean` | false     | No       | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
+| Property    | Type      | Default   | Notes                                                                                                     |
+| ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| **id**      | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                  |
+| **disable** | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
