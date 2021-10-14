@@ -1,7 +1,6 @@
 # @phntms/next-gtm
 
 [![NPM version][npm-image]][npm-url]
-[![Actions Status][ci-image]][ci-url]
 [![PR Welcome][npm-downloads-image]][npm-downloads-url]
 
 A lightweight Next library to implement custom Google Tag Manager events.
@@ -74,5 +73,3 @@ Please read `CONTRIBUTING` for details on our `CODE_OF_CONDUCT`, and the process
 [npm-url]: https://npmjs.org/package/@phntms/next-gtm
 [npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/next-gtm.svg
 [npm-downloads-url]: https://npmcharts.com/compare/@phntms/next-gtm?minimal=true
-[ci-image]: https://github.com/phantomstudios/next-gtm/workflows/Test/badge.svg
-[ci-url]: https://github.com/phantomstudios/next-gtm/actions
