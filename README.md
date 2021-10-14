@@ -51,18 +51,9 @@ export default App;
 
 **Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be loaded after.
 
-### enableTracking()
+### Using trackEvent() and enableTracking()
 
-| Parameter  | Type      | Default   | Notes                                                               |
-| ---------- | --------- | --------- | ------------------------------------------------------------------- |
-| **id**     | `string`  | undefined | Same ID used in `TrackingHeadScript`. Example format: `GTM-xxxxxx`. |
-| **enable** | `boolean` | true      | Used to enable or disable tracking events.                          |
-
-**Note**: This _should_ only be used if needed, for example after user has consented to being tracked. You _shouldn't_ need to toggle this in normal usage.
-
-### Using trackEvent()
-
-For how to use `trackEvent()`, learn more about `EventDataProps` and how this library extends `window.dataLayer`, please reference [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm).
+For how to use `trackEvent()`, `enableTracking()`, learn more about `EventDataProps` and how this library extends `window.dataLayer`, please reference [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm).
 
 ## 🍰 Contributing
 
