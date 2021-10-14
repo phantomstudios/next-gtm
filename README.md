@@ -22,13 +22,14 @@ npm i @phntms/next-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property | Type     | Default   | Required | Notes                                                                           |
-| -------- | -------- | --------- | -------- | ------------------------------------------------------------------------------- |
-| **id**   | `string` | undefined | **Yes**  | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
+| Property    | Type      | Default   | Required                                                                                                  | Notes                                                                           |
+| ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **id**      | `string`  | undefined | **Yes**                                                                                                   | ID that uniquely identifies GTM Container. Will be in the format; `GTM-xxxxxx`. |
+| **disable** | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
-This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **don't** have to place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
+This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **can't** place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
 
 Example usage:
 
@@ -49,6 +50,15 @@ export default App;
 ```
 
 **Note**: If used alongside any cookie consent scripts, `<TrackingHeadScript />` must be loaded after.
+
+### enableTracking()
+
+| Parameter  | Type      | Default   | Notes                                                               |
+| ---------- | --------- | --------- | ------------------------------------------------------------------- |
+| **id**     | `string`  | undefined | Same ID used in `TrackingHeadScript`. Example format: `GTM-xxxxxx`. |
+| **enable** | `boolean` | true      | Used to enable or disable tracking events.                          |
+
+**Note**: This _should_ only be used if needed, for example after user has consented to being tracked. You _shouldn't_ need to toggle this in normal usage.
 
 ### Using trackEvent()
 
