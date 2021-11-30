@@ -14,8 +14,8 @@ it.
 ## Testing
 
 Testing is performed using `jest` and is tested on Windows, Linux and MacOS with
-Node 10 and 12 runtimes. For a PR to be considered all these environments need to
-pass. Testing is automated using GitHub Actions CI.
+Node 12, 14 and 16 runtimes. For a PR to be considered all these environments need
+to pass. Testing is automated using GitHub Actions CI.
 
 ## Submitting changes
 
