@@ -8,7 +8,7 @@ A lightweight Next library to implement custom Google Tag Manager events.
 
 ## Introduction
 
-Extends [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm) with native support for [Next.JS 11](https://nextjs.org/blog/next-11), utilizing the new Script Component to **automatically prioritize loading of third-party scripts to improve performance**.
+Extends [@phntms/react-gtm](https://www.npmjs.com/package/@phntms/react-gtm) with native support for [Next.JS 12](https://nextjs.org/blog/next-12), utilizing the new Script Component to **automatically prioritize loading of third-party scripts to improve performance**.
 
 ## Installation
 
