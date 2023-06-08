@@ -1,7 +1,7 @@
 {
   "name": "@phntms/next-gtm",
   "description": "A lightweight Next library to implement custom Google Tag Manager events.",
-  "version": "0.1.0",
+  "version": "0.3.0-rc1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/next-gtm#readme",
