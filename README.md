@@ -22,14 +22,22 @@ npm i @phntms/next-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property    | Type      | Default   | Notes                                                                                                     |
-| ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| **id**      | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                  |
-| **disable** | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
+| Property       | Type      | Default   | Notes                                                                                                     |
+| -------------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| **id**         | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                  |
+| **disable**    | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
+| **isGTM**      | `boolean` | false     | Loads the gtag.js script by default (legacy behaviour - compatible with UA/GA4/GTM), else, loads gtm.js.  |
+| **GTMAuth**    | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.   |
+| **GTMPreview** | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.   |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
 This package utilizes [next/script](https://nextjs.org/docs/basic-features/script), which means you **can't** place it inside a `next/head`. Further, `TrackingHeadScript` should not be used in `pages/_document.js` as `next/script` has client-side functionality to ensure loading order.
+
+The `isGTM`, `GTMAuth` and `GTMPreview` optional properties are a backwards-compatible update to provide multiple GTM environment support to this library. Using multiple GTM container environments allow developers to test different GTM config versions on a preview codebase before publishing the change to the production GTM container.
+
+- If the project is known to be using GTM - the `isGTM` should be set to `true` regardless of the environment (the default `false` will continue to function though).
+- Typically you want to set the `GTMAuth` and `GTMPreview` properties (obtained from the GTM preview environment script snippet) via optional environment variables in the applications' preview environments - when left as undefined - GTM will default to the master (production) container config.
 
 Example usage:
 
@@ -41,7 +49,7 @@ const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || "";
 
 const App = ({ Component }: AppProps) => (
   <>
-    <TrackingHeadScript id={GA_TRACKING_ID} />
+    <TrackingHeadScript id={GA_TRACKING_ID} isGTM={true} />
     <Component />
   </>
 );
