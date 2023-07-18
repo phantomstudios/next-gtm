@@ -22,13 +22,13 @@ npm i @phntms/next-gtm
 
 ### &lt;TrackingHeadScript />
 
-| Property       | Type      | Default   | Notes                                                                                                     |
-| -------------- | --------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| **id**         | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                  |
-| **disable**    | `boolean` | false     | Used to disable tracking events. Use if you want user to consent to being tracked before tracking events. |
-| **isGTM**      | `boolean` | false     | Loads the gtag.js script by default (legacy behaviour - compatible with UA/GA4/GTM), else, loads gtm.js.  |
-| **GTMAuth**    | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.   |
-| **GTMPreview** | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.   |
+| Property       | Type      | Default   | Notes                                                                                                    |
+| -------------- | --------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| **id**         | `string`  | undefined | ID that uniquely identifies GTM Container. Example format: `GTM-xxxxxx`.                                 |
+| **disable**    | `boolean` | false     | Used to disable tracking events (isGTM=false only). Use if you want user to consent to cookies first     |
+| **isGTM**      | `boolean` | false     | Loads the gtag.js script by default (legacy behaviour - compatible with UA/GA4/GTM), else, loads gtm.js. |
+| **GTMAuth**    | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.  |
+| **GTMPreview** | `string`  | undefined | (isGTM = true required) Optional parameter to load a non-default GTM environment, e.g. for testing GTM.  |
 
 To initialize GTM, add `TrackingHeadScript` to the `head` of the page.
 
